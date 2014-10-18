@@ -1,0 +1,24 @@
+//
+// Variables
+// -----------
+
+//
+// Gutter modular scales
+// -----------------------
+$gutter-scale-4: golden-ratio($gutter, -4); // 0.23608em
+$gutter-scale-3: golden-ratio($gutter, -3); // 0.38198em
+$gutter-scale-2: golden-ratio($gutter, -2); // 0.61805em
+$gutter-scale-1: golden-ratio($gutter, -1); // 1em
+$gutter-scale:   golden-ratio($gutter, 0); // 1.618em
+$gutter-scale1:  golden-ratio($gutter, 1); // 2.61792em
+$gutter-scale2:  golden-ratio($gutter, 2); // 4.2358em
+$gutter-scale3:  golden-ratio($gutter, 3); // 6.85353em
+$gutter-scale4:  golden-ratio($gutter, 4); // 11.08901em
+
+
+//
+// Override Pussshy variables
+// --------------------------
+
+$pussshy-menu-width: 200px;
+$pussshy-menu-item-link-padding: $gutter-scale-2  $gutter-scale;

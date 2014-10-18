@@ -1,0 +1,103 @@
+
+// Nav block
+.nav {
+}
+
+// Menu element
+.nav__menu {
+  @extend .pussshy__menu;
+
+  /* re-style menu for >=medium screens */
+  @include respond-to("medium") {
+
+    // positional
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translate3d(0, 0, 0);
+    z-index: auto;
+    margin-top: $gutter-scale;
+
+    // appearance
+    background-color: inherit;
+    box-shadow: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+}
+
+// Menu Header element
+
+.nav__menu-header {
+  @extend .pussshy__menu-items;
+  margin: $gutter-scale-2 0;
+
+  .nav__menu-header-brand {
+    border: none;
+  }
+
+  /* re-style menu-items for >=medium screens */
+  @include respond-to("medium") {
+    display: inline-block;
+    float: left;
+
+    margin: 0;
+
+    .nav__menu-header-brand {
+      margin: 0;
+      padding: $gutter-scale-2 $gutter-scale-1;
+      border: none;
+    }
+  }
+}
+
+// Menu Items element
+
+.nav__menu-items {
+  @extend .pussshy__menu-items;
+
+  /* re-style menu-items for >=medium screens */
+  @include respond-to("medium") {
+    display: inline-block;
+    float: right;
+
+    margin: 0 $gutter-scale1;
+
+    li {
+      display: inline-block;
+
+      &.active {
+        background: inherit;
+        color: inherit;
+      }
+    }
+
+    a {
+      margin: 0;
+      padding: $gutter-scale-2 $gutter-scale-1;
+      border: none;
+    }
+  }
+}
+
+// Menu Button element
+.nav__menu-button {
+  @extend .pussshy__menu-button;
+
+  /* hide menu button on >=medium screens */
+  @include respond-to("medium") {
+    display: none;
+  }
+
+  button {
+    border: 0;
+    padding: $gutter-scale $gutter-scale-1;
+    background-color: transparent;
+
+    /* removes highlight on Safari */
+    outline: none;
+  }
+
+}

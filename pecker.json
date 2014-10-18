@@ -1,0 +1,81 @@
+{
+  "name": "pecker-docs",
+  "baseUrl": "/pecker/dist",
+  "destDir": "./dist",
+  "skipHash": true,
+  "assets": [
+    {
+      "name": "site.js",
+      "type": "file",
+      "files": [
+        "./src/pussshy/js/pussshy.js",
+        "./src/js/site.js"
+      ]
+    },
+    {
+      "name": "site.css",
+      "type": "file",
+      "files": [
+        "./src/sass/master.scss"
+      ],
+      "watch": [
+        "./src/sass/**/*.scss",
+        "./src/**/*.scss"
+      ],
+      "transform": [
+        {
+          "fn": "sass",
+          "args": {
+            "includePaths": [
+              "./src/sass/",
+              "./src/pussshy/stylesheets",
+              "./src/flat-ui-sass/stylesheets/",
+              "./bower_components/neat/app/assets/stylesheets",
+              "./bower_components/bourbon/dist/",
+              "./bower_components/normalize-scss",
+              "./bower_components/bem.scss",
+              "./bower_components/typeplate-starter-kit/scss/"
+            ]
+          }
+        },
+        "autoprefixer"
+      ]
+    },
+    {
+      "name": "fonts",
+      "type": "folder",
+      "folder": "./src/fonts",
+      "skipHash": true
+    },
+    {
+      "name": "images",
+      "type": "folder",
+      "folder": "./src/images",
+      "skipHash": true
+    },
+    {
+      "name": "jquery",
+      "type": "folder",
+      "folder": "./bower_components/jquery/dist",
+      "include": [],
+      "exclude": [],
+      "watch": []
+    },
+    {
+      "name": "jqueryPackage",
+      "type": "package",
+      "assetNames": [
+        "jquery/jquery.min.js"
+      ]
+    },
+    {
+      "name": "assets",
+      "type": "package",
+      "assetNames": [
+        "jqueryPackage",
+        "site.css",
+        "site.js"
+      ]
+    }
+  ]
+}

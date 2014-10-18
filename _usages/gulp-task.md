@@ -30,7 +30,7 @@ gulp.task('build', function (done) {
 		console.log('Build completed');
 		done();
 	}); 
-);
+});
 {% endhighlight %}
 
 Refer to API documentation to explore more in depth.

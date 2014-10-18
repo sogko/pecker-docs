@@ -1,0 +1,35 @@
+
+
+// Responsive Breakpoints
+$breakpoint-extra-small:  480px !default;
+$breakpoint-small:        768px !default;
+$breakpoint-medium:       992px !default;
+$breakpoint-large:        1200px !default;
+
+// responsive media query mixin source:
+// http://www.sitepoint.com/managing-responsive-breakpoints-sass/
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "extra-small" {
+    @media screen and (min-width: $breakpoint-extra-small) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "small" {
+    @media screen and (min-width: $breakpoint-small) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "medium" {
+    @media screen and (min-width: $breakpoint-medium) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "large" {
+    @media screen and (min-width: $breakpoint-large) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "pecker-docs",
+  "version": "0.0.0",
+  "description": "[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/bruth/jekyll-docs-template/trend.png)](https://bitdeli.com/free \"Bitdeli Badge\")",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sogko/pecker-docs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sogko/pecker-docs/issues"
+  },
+  "homepage": "https://github.com/sogko/pecker-docs",
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-liquid": "^0.1.0",
+    "jsonfile": "^2.0.0",
+    "pecker": "0.0.0"
+  },
+  "dependencies": {
+    "pecker": "0.0.0"
+  }
+}

@@ -1,0 +1,11 @@
+/* Other conveniences */
+
+html, body {
+
+  /* disable webkit tap highlight */
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+  /* prevent scrolling of your site when menu is open */
+  overflow-x: hidden;
+  height: 100%;
+}

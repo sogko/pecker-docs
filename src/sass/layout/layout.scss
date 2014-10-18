@@ -1,0 +1,13 @@
+
+.page-wrap {
+  @include outer_container();
+  padding: 0 $gutter;
+
+  .page-header {
+    @include span-columns(12);
+  }
+
+  .article {
+    @include span-columns(12);
+  }
+}

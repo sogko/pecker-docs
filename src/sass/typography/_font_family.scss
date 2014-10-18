@@ -1,0 +1,12 @@
+// Custom font-family, extension to bourbon's defintions
+
+$proxima-nova:              "Proxima Nova", $helvetica;
+$adelle:                    "Adelle", $helvetica;
+$monaco:                    Monaco, Menlo, Consolas, "Courier New", $monospace;
+
+@include font-face("Proxima Nova", './fonts/ProximaNova/ProximaNova-Regular', normal, normal);
+@include font-face("Proxima Nova", './fonts/ProximaNova/ProximaNova-Italic', normal, italic);
+@include font-face("Proxima Nova", './fonts/ProximaNova/ProximaNova-Bold', bold, normal);
+
+@include font-face("Adelle", './fonts/Adelle/Adelle-Reg', normal, normal);
+@include font-face("Adelle", './fonts/Adelle/Adelle-Bold', bold, normal);

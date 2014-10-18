@@ -1,7 +1,7 @@
 # Site title and subtitle. This is used in _includes/header.html
 title: 'Pecker'
 subtitle: 'A modern assets management framework for your web application development'
-titlelead: 'Pecker is a modern assets management framework for your web application development'
+description: 'Pecker is a modern assets management framework for your web application development'
 
 # Enable/show navigation. There are there options:
 #   0 - always hide
@@ -55,6 +55,7 @@ collections:
 # Keep as an empty string if served up at the root. If served up at a specific
 # path (e.g. on GitHub pages) leave off the trailing slash, e.g. /my-project
 baseurl: '/pecker'
+asseturl: '/pecker/dist'
 
 # Dates are not included in permalinks
 #permalink: none
@@ -68,6 +69,14 @@ future: true
 # Exclude non-site files
 exclude: [
   'bin',
+  'src',
+  'LICENSE',
+  'bower_components',
+  'node_modules',
+  'package.json',
+  'bower.json',
+  'pecker.json',
+  'gulpfile.js',
   'README.md',
   'README-pecker.md',
   'Gemfile',

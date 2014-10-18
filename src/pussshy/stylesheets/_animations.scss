@@ -1,0 +1,23 @@
+/* Menu Movement */
+
+.pussshy__menu {
+  // menu-state-initial: hide menu off-canvas
+  transform: translate3d(-$pussshy-menu-width, 0, 0);
+}
+
+.pussshy__menu-open {
+  // menu-state-open: show menu
+  transform: translate3d(0,0,0);
+}
+
+.pussshy__container--push {
+  // container-state-push: push container alongside menu
+  transform: translate3d($pussshy-menu-width, 0, 0);
+}
+
+/* Menu Transitions */
+
+.pussshy__menu,
+.pussshy__container {
+  transition: transform .2s cubic-bezier(.16, .68, .43, .99);
+}

@@ -6,7 +6,13 @@ order: 3
 
 ### Using Pecker as a local module
 
-Simply install Pecker module and require it in your NodeJS script.
+This is useful if you want to **create your own custom build workflow**.
+
+You can also **integrate Pecker into your existing build** *(in your Gruntfile.js or Gulpfile.js, for example)*.
+
+---
+
+Simply install Pecker module and require it in your code.
 
 Here's an example on how to use ```Pecker.Builder``` directly
 
@@ -27,4 +33,5 @@ builder.buildAssets(function () {
 );
 
 {% endhighlight %}
+
 Refer to API documentation to explore more in depth.
