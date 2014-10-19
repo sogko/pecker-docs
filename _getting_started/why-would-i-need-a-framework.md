@@ -1,5 +1,6 @@
 ---
-layout: getting-started
+layout: documentation
+
 title: "Why would I need a framework?"
 order: 5
 date: 2014-10-08 23:24:43

@@ -1,0 +1,5 @@
+@mixin centered-container() {
+  @include row();
+  @include outer_container();
+  padding: 0 $gutter;
+}

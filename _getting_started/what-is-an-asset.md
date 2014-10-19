@@ -1,5 +1,6 @@
 ---
-layout: getting-started
+layout: documentation
+
 title: "What is an asset?"
 order: 2
 date: 2014-10-08 23:24:43

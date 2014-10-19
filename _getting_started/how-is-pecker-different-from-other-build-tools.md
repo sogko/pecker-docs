@@ -1,5 +1,6 @@
 ---
-layout: getting-started
+layout: documentation
+
 title: "How is Pecker different from other build tools?"
 order: 4
 date: 2014-10-08 23:24:43

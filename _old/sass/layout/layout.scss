@@ -1,0 +1,21 @@
+//
+// Layout
+// ---------------------
+// Only define structural styles here (i.e. no appearance styles here)
+
+//
+// General layout container and row definition
+// ---------------------
+.layout-container {
+  height: 100%;
+}
+
+@mixin centered-container() {
+  @include row();
+  @include outer_container();
+  padding: 0 $gutter;
+}
+
+@import "documentation-layout";
+@import "page-layout";
+@import "blocks-layout";

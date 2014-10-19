@@ -1,63 +1,29 @@
 ---
-
+layout: page
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% include head.html %}
-</head>
+<section class="header-21-sub v-center">
+    <div>
+        <div class="background">&nbsp;</div>
+        <div class="container">
+            <h3>
+                <img class="hl" src="{{ site.asseturl }}/images/icons/1411844934_open-box.png" width="128"
+                     height="128" alt="">
+                {{ site.title | upcase }}
+            </h3>
 
-<body>
+            <p class="lead">{{ site.description }}
+            </p>
 
-<div class="pussshy__site-overlay"></div>
-
-<div class="page-wrap">
-
-    <nav class="pussshy__menu--left nav__menu">
-
-        <div class="nav__menu-header">
-            <a class="nav__menu-header-brand" href="{{ site.baseurl }}/">PECKER</a>
         </div>
+    </div>
+    <a class="control-btn fui-arrow-down" href="#"> </a>
+</section>
 
-        <ul class="pussshy__menu-items nav__menu-items">
-            <li><a href="{{ site.baseurl }}/getting-started/overview/">Getting Started</a></li>
-            <li><a href="{{ site.baseurl }}/documentation/installation">Documentation</a></li>
-            <li><a href="{{ site.codeurl }}">Source</a></li>
-        </ul>
+<section class="content-36">
+    <div class="container">
+        <h2>Quickstart</h2>
 
-    </nav>
-
-    <div class="pussshy__container">
-
-        <div class="pussshy__menu-button nav__menu-button"><button type="button">&#9776; Menu</button></div>
-
-        <section class="header-21-sub v-center">
-            <div>
-                <div class="background">&nbsp;</div>
-                <div class="container">
-                    <h3>
-                        <img class="hl" src="{{ site.asseturl }}/images/icons/1411844934_open-box.png" width="128"
-                             height="128" alt="">
-                        PECKER
-                    </h3>
-
-                    <p class="lead">{{ site.description }}
-                    </p>
-
-                    <!--<div class="btns">-->
-                    <!--<a class="btn btn-primary" href="{{ site.baseurl }}/getting-started/overview/">Getting Started</a>-->
-                    <!--<a class="btn btn-inverse" href="{{ site.baseurl }}/documentation/installation">Documentation</a>-->
-                    <!--<a class="btn btn-inverse" href="{{ site.codeurl }}">Source</a>-->
-                    <!--</div>-->
-                </div>
-            </div>
-            <a class="control-btn fui-arrow-down" href="#"> </a>
-        </section>
-        <section class="content-36">
-            <div class="container">
-                <h2>Quickstart</h2>
-
-                <div class="highlight">
+        <div class="highlight">
                 <pre>
                 <code class="language-bash" data-lang="bash">
                     <span class="nv">$ </span>npm install pecker-cli -g <span class="c"># install Pecker CLI</span>
@@ -65,106 +31,80 @@
                     <span class="nv">$ </span>pecker init <span class="c"># initialize configuration file using the interactive CLI</span>
                     <span class="nv">$ </span>pecker <span class="c"># run build</span>
                 </code></pre>
-                </div>
+        </div>
 
-                <br/>
-                <h4>Congratulations! You have just configured your project and build your assets!</h4>
+        <br/>
+        <h4>Congratulations! You have just configured your project and build your assets!</h4>
 
-                <br/>
-                <br/>
+        <br/>
+        <br/>
 
-                <a class="btn btn-success control-btn" href="{{ site.baseurl }}/getting-started/overview/">Continue
-                    to learn more</a>
-
-            </div>
-
-        </section>
-        <section class="content-26 bg-clouds">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2">
-                        <h3>Take control of your web application assets</h3>
-
-                        <p class="lead">Pecker makes it easy for you to manage your assets pipeline, enabling you to
-                            deliver
-                            quality web application</p>
-                    </div>
-                </div>
-                <div class="row features">
-                    <div class="col-sm-3">
-                        <img src="{{ site.asseturl }}/images/icons/gulp-round-2x.png" alt="" width="100" height="100">
-                        <h6>Built upon Gulp</h6>
-                        Gulp enables simple and intuitive build for your assets
-                    </div>
-
-                    <div class="col-sm-4 col-sm-offset-1">
-                        <img src="{{ site.asseturl }}/images/icons/Responsive1@2x.png" alt="" width="100" height="100">
-                        <h6>Stylesheets, scripts, images and more!</h6>
-                        You can easily manage a variety of asset types in your web application projects.
-                    </div>
-                    <div class="col-sm-3 col-sm-offset-1">
-
-                        <img src="{{ site.asseturl }}/images/icons/Umbrella@2x.png" alt="" width="107" height="100">
-                        <h6>Future-proof with ES6</h6>
-                        Browserify for your CommonJS modules. (AMD too, with <a
-                            href="https://github.com/jaredhanson/deamdify">a little help</a>)
-                    </div>
-                </div>
-                <div class="row features">
-
-                    <div class="col-sm-3">
-                        <img src="{{ site.asseturl }}/images/icons/Spaceship@2x.png" alt="" width="100" height="100">
-                        <h6>Co-exist with your build tools</h6>
-                        Grunt, Broccoli and even Make!
-                        <br/>
-                        Let Pecker handle assets management and be part of your build workflow.
-
-                    </div>
-
-                    <div class="col-sm-4 col-sm-offset-1">
-
-                        <img src="{{ site.asseturl }}/images/icons/Box1@2x.png" alt="" width="88" height="70">
-                        <h6>Integrate with modern package managers</h6>
-                        Leverage <a href="https://npmjs.org">NPM</a> and <a href="https://bower.io">Bower</a> package
-                        managers for both your server and client-side code.
-                    </div>
-                    <div class="col-sm-3 col-sm-offset-1">
-                        <img src="{{ site.asseturl }}/images/icons/Clipboard@2x.png" alt="" width="100" height="100">
-                        <h6>Full of features</h6>
-                        Asset watcher, on-demand build, cache-busters and more!
-                    </div>
-                </div>
-            </div>
-
-
-        </section>
-        <section class="content-12">
-            <a class="wide btn-wide" href="{{ site.baseurl }}/getting-started/overview/">Get
-                Started Now</a>
-        </section>
-
-        <footer class="footer-4 bg-midnight-blue">
-            <div class="container">
-            <span class="brand-text">PECKER was cold-heartedly engineered with highest degree of penetrative precision by <a
-                    class="brand" href="https://twitter.com/sogko">@sogko</a></span>
-            </div>
-        </footer>
-        <footer class="footer-5 bg-wet-asphalt">
-            <div class="container">
-                <a class="brand" href="#">
-                    <img src="{{ site.asseturl }}/images/1411844934_open-box.png" width="35" height="35" alt="">
-                </a>
-
-                <div class="row">
-                </div>
-            </div>
-        </footer>
+        <a class="btn btn-success control-btn" href="{{ site.baseurl }}/getting-started/overview/">Continue
+            to learn more</a>
 
     </div>
-</div>
+
+</section>
+<section class="content-26 bg-clouds">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <h3>Take control of your web application assets</h3>
+
+                <p class="lead">Pecker makes it easy for you to manage your assets pipeline, enabling you to
+                    deliver
+                    quality web application</p>
+            </div>
+        </div>
+        <div class="row features">
+            <div class="col-sm-3">
+                <img src="{{ site.asseturl }}/images/icons/gulp-round-2x.png" alt="" width="100" height="100">
+                <h6>Built upon Gulp</h6>
+                Gulp enables simple and intuitive build for your assets
+            </div>
+
+            <div class="col-sm-4 col-sm-offset-1">
+                <img src="{{ site.asseturl }}/images/icons/Responsive1@2x.png" alt="" width="100" height="100">
+                <h6>Stylesheets, scripts, images and more!</h6>
+                You can easily manage a variety of asset types in your web application projects.
+            </div>
+            <div class="col-sm-3 col-sm-offset-1">
+
+                <img src="{{ site.asseturl }}/images/icons/Umbrella@2x.png" alt="" width="107" height="100">
+                <h6>Future-proof with ES6</h6>
+                Browserify for your CommonJS modules. (AMD too, with <a
+                    href="https://github.com/jaredhanson/deamdify">a little help</a>)
+            </div>
+        </div>
+        <div class="row features">
+
+            <div class="col-sm-3">
+                <img src="{{ site.asseturl }}/images/icons/Spaceship@2x.png" alt="" width="100" height="100">
+                <h6>Co-exist with your build tools</h6>
+                Grunt, Broccoli and even Make!
+                <br/>
+                Let Pecker handle assets management and be part of your build workflow.
+
+            </div>
+
+            <div class="col-sm-4 col-sm-offset-1">
+
+                <img src="{{ site.asseturl }}/images/icons/Box1@2x.png" alt="" width="88" height="70">
+                <h6>Integrate with modern package managers</h6>
+                Leverage <a href="https://npmjs.org">NPM</a> and <a href="https://bower.io">Bower</a> package
+                managers for both your server and client-side code.
+            </div>
+            <div class="col-sm-3 col-sm-offset-1">
+                <img src="{{ site.asseturl }}/images/icons/Clipboard@2x.png" alt="" width="100" height="100">
+                <h6>Full of features</h6>
+                Asset watcher, on-demand build, cache-busters and more!
+            </div>
+        </div>
+    </div>
 
 
-{% include scripts.html %}
-
-</body>
-</html>
+</section>
+<section class="content-12">
+    <a class="wide btn-wide" href="{{ site.baseurl }}/getting-started/overview/">Get
+        Started Now</a>
+</section>

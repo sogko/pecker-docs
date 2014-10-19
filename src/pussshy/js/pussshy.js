@@ -47,68 +47,92 @@ var Pussshy = (function () {
     this.options = options;
 
     this.$body = $('body');
-    this.$menu = $('.pussshy__menu--left'); //menu css class
-    this.$container = $('.pussshy__container'); //container css class
-    this.$siteOverlay = $('.pussshy__site-overlay'); //site overlay
+    this.$canvas = $('.pussshy__canvas');
+    this.$siteOverlay = $('.pussshy__site-overlay');
 
-    this.menuOpenClass = 'pussshy__menu--left-open'; //menu position & menu open class
-    this.siteOverlayActiveClass = 'pussshy__site-overlay--active'; //css class to toggle site overlay
-    this.containerPushClass = 'pussshy__container--push'; //container open class
+    this.$leftMenu = $('.pussshy__menu, .pussshy__left-menu');
+    this.$leftMenuBtn = $('.pussshy__menu-button, .pussshy__left-menu-button');
 
-    this.$menuBtn = $('.pussshy__menu-button, .pussshy__menu a'); //css classes to toggle the menu
+    this.$rightMenu = $('.pussshy__right-menu');
+    this.$rightMenuBtn = $('.pussshy__right-menu-button');
+
+    // classes
+    this.menuLeftOpenClass = 'pussshy__left-menu--open';
+    this.menuRightOpenClass = 'pussshy__right-menu--open';
+    this.canvasPushLeftClass = 'pussshy__canvas--push-left';
+    this.canvasPushRightClass = 'pussshy__canvas--push-right';
+    this.siteOverlayActiveClass = 'pussshy__site-overlay--active';
+
+    this.directionState = 'left';
     this.menuSpeed = 200; //jQuery fallback menu speed
-    this.menuWidth = this.$menu.width() + 'px'; //jQuery fallback menu width
-    this.state = true; //jQuery fallback menu state
+    this.menuWidth = this.$leftMenu.width() + 'px'; //jQuery fallback menu width
+    this.menuState = 'closed'; //jQuery fallback menu state
 
-    // init click/touch events
+
     //toggle menu
-    this.$menuBtn.click(function () {
+    this.$leftMenuBtn.click(function () {
+      this.directionState = 'left';
       this.toggle();
     }.bind(this));
+
+    this.$rightMenuBtn.click(function () {
+      this.directionState = 'right';
+      this.toggle();
+    }.bind(this));
+
     //close menu when clicking site overlay
     this.$siteOverlay.click(function () {
-      this.toggle();
+      this.toggle(this.directionState);
     }.bind(this));
 
     if (!cssTransforms3d) {
       //jQuery fallback
-      this.$menu.css({left: '0px'}); //hide menu by default
-      this.$container.css({'overflow-x': 'hidden'}); //fixes IE scrollbar issue
+      this.$leftMenu.css({left: '0px'}); //hide menu by default
+      this.$canvas.css({'overflow-x': 'hidden'}); //fixes IE scrollbar issue
     }
   }
 
   function togglePushy() {
     this.$body.toggleClass(this.siteOverlayActiveClass); //toggle site overlay
-    this.$menu.toggleClass(this.menuOpenClass);
-    this.$container.toggleClass(this.containerPushClass);
+
+    if (this.directionState === 'right') {
+      this.$rightMenu.toggleClass(this.menuRightOpenClass);
+      this.$canvas.toggleClass(this.canvasPushRightClass);
+    } else {
+      this.$leftMenu.toggleClass(this.menuLeftOpenClass);
+      this.$canvas.toggleClass(this.canvasPushLeftClass);
+    }
   }
 
   function openPushyFallback() {
     this.$body.addClass(this.siteOverlayActiveClass);
-    this.$menu.animate({left: this.menuWidth }, this.menuSpeed);
-    this.$container.animate({left:  this.menuWidth}, this.menuSpeed);
+    this.$leftMenu.animate({left: this.menuWidth }, this.menuSpeed);
+    this.$canvas.animate({left: this.menuWidth}, this.menuSpeed);
   }
 
   function closePushyFallback() {
     this.$body.removeClass(this.siteOverlayActiveClass);
-    this.$menu.animate({left: '0px'}, this.menuSpeed);
-    this.$container.animate({left: '0px'}, this.menuSpeed);
+    this.$leftMenu.animate({left: '0px'}, this.menuSpeed);
+    this.$canvas.animate({left: '0px'}, this.menuSpeed);
   }
 
   Pussshy.prototype.toggle = function toggle() {
+
+
     if (cssTransforms3d) {
       togglePushy.call(this);
     } else {
       //jQuery fallback
-      if (this.state) {
+      if (this.menuState === 'closed') {
         openPushyFallback.call(this);
-        this.state = false;
+        this.menuState = 'opened';
       } else {
         closePushyFallback.call(this);
-        this.state = true;
+        this.menuState = 'closed';
       }
     }
   };
+
 
   return Pussshy;
 

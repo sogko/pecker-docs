@@ -10,16 +10,20 @@
       "files": [
         "./src/pussshy/js/pussshy.js",
         "./src/js/site.js"
+      ],
+      "watch": [
+        "./src/pussshy/js/pussshy.js",
+        "./src/js/site.js"
       ]
     },
     {
       "name": "site.css",
       "type": "file",
       "files": [
-        "./src/sass/master.scss"
+        "./src/site/site.scss"
       ],
       "watch": [
-        "./src/sass/**/*.scss",
+        "./src/site/**/*.scss",
         "./src/**/*.scss"
       ],
       "transform": [
@@ -27,9 +31,7 @@
           "fn": "sass",
           "args": {
             "includePaths": [
-              "./src/sass/",
-              "./src/pussshy/stylesheets",
-              "./src/flat-ui-sass/stylesheets/",
+              "./src/",
               "./bower_components/neat/app/assets/stylesheets",
               "./bower_components/bourbon/dist/",
               "./bower_components/normalize-scss",
@@ -44,14 +46,12 @@
     {
       "name": "fonts",
       "type": "folder",
-      "folder": "./src/fonts",
-      "skipHash": true
+      "folder": "./src/fonts"
     },
     {
       "name": "images",
       "type": "folder",
-      "folder": "./src/images",
-      "skipHash": true
+      "folder": "./src/images"
     },
     {
       "name": "jquery",

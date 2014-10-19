@@ -1,0 +1,19 @@
+//
+// Variables
+// -----------
+$brand-text-color: $secondary-color-tint-5;
+
+// block: Brand
+.brand {}
+
+// block: Simple
+.brand-simple {
+  &,
+  &a,
+  &:visited,
+  &:hover,
+  &:active {
+    color: $brand-text-color;
+
+  }
+}

@@ -1,0 +1,44 @@
+$documentation-layout-sticky-footer-height: 100px !default;
+
+//
+// Documentation layout
+// ---------------------
+.documentation-layout {
+  @include sticky-footer-content($documentation-layout-sticky-footer-height);
+  .header {
+    @include centered-container();
+  }
+
+  .content-row {
+    @include centered-container();
+  }
+
+  .toc {
+  }
+  .content-column {
+  }
+  .content-header {
+  }
+  .content {
+  }
+
+
+  @include respond-to("medium") {
+
+    .header {
+    }
+    .toc {
+      @include span-columns(4 of 12);
+    }
+    .content-column {
+      @include span-columns(8 of 12);
+      .content-header {}
+    }
+    .footer {}
+  }
+}
+
+.documentation-layout__sticky-footer {
+  @include sticky-footer($documentation-layout-sticky-footer-height);
+
+}

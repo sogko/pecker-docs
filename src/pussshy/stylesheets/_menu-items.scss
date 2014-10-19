@@ -1,32 +1,45 @@
-
 /* Menu Items Appearance */
+
+.pussshy__menu-items-link {
+  display: block;
+  color: $pussshy-menu-item-link-color;
+  background-color: $pussshy-menu-item-link-background-color;
+  padding: $pussshy-menu-item-link-padding;
+  border-top: $pussshy-menu-item-link-border-top;
+  border-bottom: $pussshy-menu-item-link-border-bottom;
+  text-decoration: $pussshy-menu-item-link-text-decoration;
+}
 
 .pussshy__menu-items {
 
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  &, ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li.active {
+    background: $pussshy-menu-item-link-active-background-color;
+    a {
+      color: $pussshy-menu-item-link-active-color;
+
+      &:hover {
+        background: $pussshy-menu-item-link-hover-background-color;
+        color: $pussshy-menu-item-link-hover-color;
+      }
+    }
+  }
 
   li {
-    &.active {
-      background: $pussshy-menu-item-link-active-background-color;
-      color: $pussshy-menu-item-link-active-color;
+    a {
+      @extend .pussshy__menu-items-link;
+      &:hover {
+        background: $pussshy-menu-item-link-hover-background-color;
+        color: $pussshy-menu-item-link-hover-color;
+      }
     }
   }
 
-  a {
-    display: block;
-    color: $pussshy-menu-item-link-color;
-    background-color: $pussshy-menu-item-link-background-color;
-    padding: $pussshy-menu-item-link-padding;
-    border-top: $pussshy-menu-item-link-border-top;
-    border-bottom: $pussshy-menu-item-link-border-bottom;
-    text-decoration: $pussshy-menu-item-link-text-decoration;
 
-    &:hover {
-      background: $pussshy-menu-item-link-hover-background-color;
-      color: $pussshy-menu-item-link-hover-color;
-    }
-  }
 
 }

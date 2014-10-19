@@ -1,0 +1,14 @@
+// Menu Button element
+.collapsible-menu-button {
+  button {
+    border: 0;
+    padding: $gutter-scale $gutter-scale-1 $gutter-scale 0;
+
+    background-color: transparent;
+    color: $brand-text-color;
+
+    /* removes highlight on Safari */
+    outline: none;
+  }
+
+}

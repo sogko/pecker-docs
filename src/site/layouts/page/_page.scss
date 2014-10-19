@@ -1,0 +1,27 @@
+$page-layout-sticky-footer-height: 100px !default;
+
+//
+// Page layout
+// ---------------------
+.page-layout {
+  @include sticky-footer-content($page-layout-sticky-footer-height);
+
+  .header {
+    @include centered-container();
+  }
+  .content {
+    @include centered-container();
+  }
+  .footer {
+  }
+
+  @include respond-to("medium") {
+    .header {}
+    .content {}
+    .footer {}
+  }
+}
+.page-layout__sticky-footer {
+  @include sticky-footer($page-layout-sticky-footer-height);
+
+}

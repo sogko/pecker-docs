@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: documentation
 title: "Local Module"
 order: 3
 ---

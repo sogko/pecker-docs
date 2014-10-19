@@ -1,5 +1,6 @@
 ---
-layout: getting-started
+layout: documentation
+
 title: "Overview"
 order: 1
 ---

@@ -1,5 +1,6 @@
 ---
-layout: page
+layout: documentation
+
 title: "Changelog"
 order: 2
 ---

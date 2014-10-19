@@ -17,7 +17,7 @@
 @import "variables";
 @import "menu";
 @import "menu-items";
-@import "container";
+@import "canvas";
 @import "animations";
 @import "site-overlay";
 @import "global";
@@ -26,16 +26,22 @@
 // Actual implementation in separate .scss files
 .pussshy {}
 .pussshy__menu {}
-.pussshy__menu--left {}
-.pussshy__menu--left-open {}
-.pussshy__menu-items {}
-.pussshy__menu-button {}
-.pussshy__container {}
-.pussshy__container--push {}
+.pussshy__menu--open {}
+.pussshy__left-menu {}
+.pussshy__left-menu--open {}
+.pussshy__right-menu {}
+.pussshy__right-menu--open {}
 
-.pussshy__menu--left {
-  @extend .pussshy__menu;
-}
-.pussshy__menu--left-open {
-  @extend .pussshy__menu-open;
-}
+.pussshy__menu-button {}
+.pussshy__left-menu-button {}
+.pussshy__right-menu-button {}
+
+.pussshy__menu-items {}
+.pussshy__canvas {}
+.pussshy__canvas--push-left {}
+.pussshy__canvas--push-right {}
+
+.pussshy__site-overlay {}
+.pussshy__site-overlay--active {}
+
+

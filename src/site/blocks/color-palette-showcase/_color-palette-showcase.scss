@@ -1,0 +1,148 @@
+$number_of_shifts: 5;
+$palette-box-width-unit: 50px;
+.color-palette-showcase {
+
+  @include clearfix();
+  margin-bottom: $gutter-scale1;
+
+  .color-palette-container {
+    position: relative;
+    @include clearfix();
+    margin-bottom: $gutter-scale1;
+
+    .color-palette {
+      float: left;
+      width: $palette-box-width-unit * ($number_of_shifts) ;
+      height: $palette-box-width-unit * ($number_of_shifts) ;
+    }
+    .color-palette-shifts {
+      float: left;
+      width: $palette-box-width-unit;
+      div {
+        margin: 0;
+        padding: 0;
+        float: left;
+        width: $palette-box-width-unit;
+        height: $palette-box-width-unit;
+      }
+    }
+
+    .color-specs {
+      float: left;
+      margin-left: $gutter;
+      h4 {
+        @extend .delta;
+        font-weight: normal;
+      }
+      @include clearfix();
+    }
+  }
+}
+
+.primary-color-palette {
+  .color-palette {
+    background-color: $primary-color;
+  }
+  .tint-shift-1 {
+    background-color: $primary-color-tint-1;
+  }
+  .tint-shift-2 {
+    background-color: $primary-color-tint-2;
+  }
+  .tint-shift-3 {
+    background-color: $primary-color-tint-3;
+  }
+  .tint-shift-4 {
+    background-color: $primary-color-tint-4;
+  }
+  .tint-shift-5 {
+    background-color: $primary-color-tint-5;
+  }
+  .shade-shift-1 {
+    background-color: $primary-color-shade-1;
+  }
+  .shade-shift-2 {
+    background-color: $primary-color-shade-2;
+  }
+  .shade-shift-3 {
+    background-color: $primary-color-shade-3;
+  }
+  .shade-shift-4 {
+    background-color: $primary-color-shade-4;
+  }
+  .shade-shift-5 {
+    background-color: $primary-color-shade-5;
+  }
+}
+
+.secondary-color-palette {
+  .color-palette {
+    background-color: $secondary-color;
+  }
+  .tint-shift-1 {
+    background-color: $secondary-color-tint-1;
+  }
+  .tint-shift-2 {
+    background-color: $secondary-color-tint-2;
+  }
+  .tint-shift-3 {
+    background-color: $secondary-color-tint-3;
+  }
+  .tint-shift-4 {
+    background-color: $secondary-color-tint-4;
+  }
+  .tint-shift-5 {
+    background-color: $secondary-color-tint-5;
+  }
+  .shade-shift-1 {
+    background-color: $secondary-color-shade-1;
+  }
+  .shade-shift-2 {
+    background-color: $secondary-color-shade-2;
+  }
+  .shade-shift-3 {
+    background-color: $secondary-color-shade-3;
+  }
+  .shade-shift-4 {
+    background-color: $secondary-color-shade-4;
+  }
+  .shade-shift-5 {
+    background-color: $secondary-color-shade-5;
+  }
+}
+
+.grayscale-color-palette {
+  .color-palette {
+    background-color: $grayscale-color;
+  }
+  .tint-shift-1 {
+    background-color: $grayscale-color-tint-1;
+  }
+  .tint-shift-2 {
+    background-color: $grayscale-color-tint-2;
+  }
+  .tint-shift-3 {
+    background-color: $grayscale-color-tint-3;
+  }
+  .tint-shift-4 {
+    background-color: $grayscale-color-tint-4;
+  }
+  .tint-shift-5 {
+    background-color: $grayscale-color-tint-5;
+  }
+  .shade-shift-1 {
+    background-color: $grayscale-color-shade-1;
+  }
+  .shade-shift-2 {
+    background-color: $grayscale-color-shade-2;
+  }
+  .shade-shift-3 {
+    background-color: $grayscale-color-shade-3;
+  }
+  .shade-shift-4 {
+    background-color: $grayscale-color-shade-4;
+  }
+  .shade-shift-5 {
+    background-color: $grayscale-color-shade-5;
+  }
+}

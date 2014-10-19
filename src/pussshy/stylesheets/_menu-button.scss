@@ -1,0 +1,11 @@
+/* Menu Button */
+
+.pussshy__menu-button {}
+
+.pussshy__left-menu-button {
+  @extend .pussshy__menu-button;
+}
+
+.pussshy__right-menu-button {
+  @extend .pussshy__menu-button;
+}

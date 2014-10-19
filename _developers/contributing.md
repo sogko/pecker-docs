@@ -1,5 +1,6 @@
 ---
-layout: page
+layout: documentation
+
 title: "Contributing"
 order: 1
 date: 2014-10-01 23:24:43

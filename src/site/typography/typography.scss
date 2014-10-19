@@ -1,0 +1,66 @@
+
+.ampersand { @extend %ampersand-placeholder; }
+
+// Styles: Headers
+// -------------------------------------//
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+{
+  font-family: $font-family-header;
+}
+h1,
+h2,
+h3 {
+  font-weight: normal;
+}
+h4,
+h5,
+h6,
+{
+  font-weight: bold;
+}
+
+
+// Styles: Sub-headers
+// -------------------------------------//
+.sub-header {
+  font-family: $font-family-sub-header;
+}
+
+// Styles: Paragraph leads
+// -------------------------------------//
+.lead {
+  font-family: $font-family-text-lead;
+  @extend .delta;
+}
+
+// Styles: Block quotes and pull quotes
+// -------------------------------------//
+blockquote {
+  font-family: $font-family-quotes;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid $horizontal-rule-color;
+  margin: $gutter-scale 0;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  transition: color 100ms linear;
+  &:visited {
+    color: $link-visited-color;
+  }
+  &:hover {
+    color: $link-hover-color;
+  }
+  &:active {
+    color: $link-active-color;
+  }
+}

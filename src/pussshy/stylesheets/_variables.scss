@@ -7,7 +7,8 @@ $pussshy-menu-width:              200px !default;
 $pussshy-menu-font-size:          0.8em !default;
 $pussshy-menu-font-weight:        bold !default;
 $pussshy-menu-background-color:   #333332 !default;
-$pussshy-menu-box-shadow:         inset -10px 0 6px -9px rgba(0, 0, 0, .7) !default;
+$pussshy-menu-box-shadow-color:   rgba(0, 0, 0, .7) !default;
+$pussshy-menu-box-shadow:         inset -10px 0 6px -9px $pussshy-menu-box-shadow-color !default;
 $pussshy-menu-z-index:            9999 !default;
 
 // Menu Item Appearance
@@ -16,7 +17,7 @@ $pussshy-menu-item-link-color:                    #b3b3b1 !default;
 $pussshy-menu-item-link-background-color:         transparent !default;
 $pussshy-menu-item-link-active-color:             lighten($pussshy-menu-item-link-color, 50%) !default;
 $pussshy-menu-item-link-active-background-color:  lighten($pussshy-menu-background-color, 10%) !default;
-$pussshy-menu-item-link-hover-color:              #FFF !default;
+$pussshy-menu-item-link-hover-color:              #ffffff !default;
 $pussshy-menu-item-link-hover-background-color:   #00b4ff !default;
 $pussshy-menu-item-link-border-top:               1px solid rgba(255, 255, 255, .1) !default;
 $pussshy-menu-item-link-border-bottom:            1px solid rgba(0, 0, 0, .1) !default;
@@ -24,3 +25,5 @@ $pussshy-menu-item-link-text-decoration:          none !default;
 
 // Site Overlay Appearance
 $pussshy-site-overlay-color: rgba(0,0,0,0.5) !default;
+
+$pussshy-transition: transform .2s cubic-bezier(.16, .68, .43, .99);
