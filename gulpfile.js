@@ -178,6 +178,18 @@ gulp.task('clean', function () {
   fs.removeSync('./_site');
   fs.removeSync('./_includes');
   fs.removeSync('./_layouts');
+
+  glob('**/*.html', {
+    cwd: './src/site/pages'
+  }, function (err, files) {
+    for (var i = 0; i < files.length; i++) {
+      var dirname = path.dirname(files[i]);
+      fs.removeSync(files[i]);
+      if (dirname !== '.') {
+        fs.removeSync(dirname);
+      }
+    }
+  });
 });
 
 gulp.task('jekyll:build', ['parseIncludeTemplates', 'copyIncludes', 'copyBlocks', 'copyLayouts'], function () {
