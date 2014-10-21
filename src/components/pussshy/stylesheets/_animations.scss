@@ -1,0 +1,42 @@
+/* Menu Movement */
+
+.pussshy__left-menu--close {
+  transform: translate3d(-$pussshy-menu-width, 0, 0);
+  opacity: 0; /* opacity property to counter 'flicker' when passing breakpoints */
+}
+
+.pussshy__left-menu--open {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+.pussshy__right-menu--close {
+  transform: translate3d($pussshy-menu-width, 0, 0);
+  opacity: 0;
+}
+
+.pussshy__right-menu--open {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+.pussshy__canvas--push-left {
+  transform: translate3d($pussshy-menu-width, 0, 0);
+}
+
+.pussshy__canvas--push-right {
+  transform: translate3d(-$pussshy-menu-width, 0, 0);
+}
+
+/* Menu Transitions */
+
+.pussshy__left-menu,
+.pussshy__right-menu,
+.pussshy__canvas {
+  transition: $pussshy-transition;
+}
+
+.pussshy__left-menu--open,
+.pussshy__right-menu--open {
+  transition: $pussshy-transition, opacity .2s;
+}

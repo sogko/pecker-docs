@@ -1,0 +1,23 @@
+//
+// Blocks page
+// ---------------------
+.blocks-page {
+  dt {
+    font-weight: normal;
+    font-size: 1.2em;
+
+    code,
+    em {
+      margin-left: $gutter-scale;
+      font-weight: normal;
+      font-style: normal;
+      font-size: 0.8em;
+    }
+  }
+  dd {
+    margin: 0 0 $gutter-scale;
+    border: 1px dashed tint($secondary-color, 90%);
+    @include clearfix;
+  }
+}
+

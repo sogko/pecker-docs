@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pussshy demo</title>
+    <link rel="stylesheet" href="dist/pussshy.css"/>
+    <link rel="stylesheet" href="dist/demo.css"/>
+</head>
+<body>
+<div class="container">
+    <h1>This should not move</h1>
+    <p>Because its not within .root-container</p>
+
+    <div class="root-container">
+        <div class="container">
+            <h1>Pussshy Demo</h1>
+            <button class="menu-button">Toggle menu</button>
+        </div>
+        <div class="menu">
+            <ul class="menu-items">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Documentation</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/pussshy.js"></script>
+<script>
+    var p = new Pussshy({
+        direction: 'right',
+        contextTarget: '.root-container',
+        siteOverlayTarget: '.site-overlay',
+        canvasTarget: '.container',
+        menuTarget: '.menu',
+        menuItemsTarget: '.menu-items',
+        menuButtonTarget: '.menu-button'
+    });
+    console.log(p);
+</script>
+</html>

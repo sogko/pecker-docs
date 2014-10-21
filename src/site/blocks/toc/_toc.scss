@@ -5,6 +5,7 @@
 
 // Menu element
 .toc__menu {
+  @extend .pussshy__left-menu;
   @include respond-to("medium") {
     // positional
     position: relative;
@@ -21,6 +22,7 @@
 // Menu Items element
 
 .toc__menu-items {
+  @extend .pussshy__menu-items;
 
   margin-top: $gutter-scale2;
 
@@ -44,7 +46,7 @@
     margin-bottom: $gutter-scale-2;
   }
   li li a {
-    padding: $gutter-scale-4  $gutter-scale1 $gutter-scale-4 $gutter-scale ;
+    padding: $gutter-scale-4  $gutter-scale1 $gutter-scale-4 $gutter-scale;
   }
 
   @include respond-to("medium") {

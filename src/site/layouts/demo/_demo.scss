@@ -1,0 +1,15 @@
+//
+// Demo layout
+// ---------------------
+.demo-layout {
+  margin-top: $gutter-scale2;
+  .content {
+    @include centered-container();
+  }
+
+  @include respond-to("medium") {
+    .header {}
+    .content {}
+    .footer {}
+  }
+}

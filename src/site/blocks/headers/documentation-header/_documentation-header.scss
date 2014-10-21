@@ -1,5 +1,8 @@
 .documentation-header {
-  margin: $gutter-scale1 0 $gutter-scale;
+  margin: $gutter-scale-1 0 $gutter-scale;
+  @include respond-to('medium') {
+    margin: $gutter-scale1 0 $gutter-scale;
+  }
 }
 .documentation-header__menu-button {
   display: inline-block;
@@ -12,7 +15,7 @@
   display: none;
   .brand-simple {
     display: inline-block;
-    padding: $gutter-scale-2;
+    padding: $gutter-scale-2 0;
   }
   @include respond-to('medium') {
     display: block;

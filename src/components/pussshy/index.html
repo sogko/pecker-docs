@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pussshy demo</title>
+    <link rel="stylesheet" href="dist/pussshy.css"/>
+    <link rel="stylesheet" href="dist/demo.css"/>
+</head>
+<body>
+<div class="pussshy__canvas container">
+    <h1>Pussshy Demo</h1>
+    <button class="pussshy__menu-button">Toggle menu</button>
+</div>
+<div class="pussshy__menu">
+    <ul class="pussshy__menu-items">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Documentation</a></li>
+    </ul>
+</div>
+
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/pussshy.js"></script>
+<script>
+    var p = new Pussshy({});
+    console.log(p);
+</script>
+</html>

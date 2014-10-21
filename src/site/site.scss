@@ -11,10 +11,11 @@
 @import "pussshy/stylesheets/pussshy";  // import pussshy after variables
 
 @import "layouts/default/default";
+@import "layouts/demo/demo";
 @import "layouts/documentation/documentation";
 @import "layouts/page/page";
 
-@import "pages/blocks-page.scss";
+@import "pages/blocks/blocks";
 
 @import "typography/font_family";
 @import "typography/variables";

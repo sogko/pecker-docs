@@ -1,0 +1,47 @@
+/* Menu */
+
+.pussshy__menu {
+
+}
+
+.pussshy__left-menu {
+  // positional
+  position: fixed;
+  width: $pussshy-menu-width;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: $pussshy-menu-z-index;
+
+  // appearance
+  background-color: $pussshy-menu-background-color;
+  box-shadow: $pussshy-menu-box-shadow;
+  font-size: $pussshy-menu-font-size;
+  font-weight: $pussshy-menu-font-weight;
+
+  // overflow
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; /* enables momentum scrolling in iOS overflow elements */
+}
+
+.pussshy__right-menu {
+
+  // positional
+  position: fixed;
+  width: $pussshy-menu-width;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: $pussshy-menu-z-index;
+
+  // appearance
+  background-color: $pussshy-menu-background-color;
+  box-shadow: $pussshy-menu-box-shadow;
+  font-size: $pussshy-menu-font-size;
+  font-weight: $pussshy-menu-font-weight;
+
+  // overflow
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; /* enables momentum scrolling in iOS overflow elements */
+
+}

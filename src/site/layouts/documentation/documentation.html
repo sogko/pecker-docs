@@ -2,10 +2,11 @@
 layout: default
 ---
 
+<div class="documentation-layout"
+     data-block-name="layouts/documentation"
+     data-block-type="runnable">
 
-<div class="documentation-layout">
-
-    <div class="pussshy__canvas header">
+    <div class="header">
         {% include headers/documentation-header/documentation-header.html %}
     </div>
 
@@ -14,7 +15,7 @@ layout: default
             {% include toc/toc__menu.html %}
         </div>
 
-        <div class="pussshy__canvas content-column">
+        <div class="content-column">
 
             <div class="content-header">
                 <h2>{{ page.title }}
@@ -33,6 +34,6 @@ layout: default
     </div>
 </div>
 
-<footer class="pussshy__canvas documentation-layout__sticky-footer">
+<footer class="documentation-layout__sticky-footer">
     {% include footers/simple-footer/simple-footer.html %}
 </footer>

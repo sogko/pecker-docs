@@ -1,0 +1,22 @@
+{
+  "name": "pussshy",
+  "baseDir": "/Users/hafiz/dev/pecker-docs/src/components/pussshy",
+  "baseUrl": "dist/",
+  "destDir": "./dist",
+  "skipHash": true,
+  "assets": [
+    {
+      "type": "file",
+      "name": "pussshy.css",
+      "files": [
+        "./stylesheets/pussshy.scss"
+      ],
+      "transform": [
+        "sass"
+      ],
+      "watch": [
+        "./stylesheets/**/*.scss"
+      ]
+    }
+  ]
+}

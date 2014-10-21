@@ -26,6 +26,7 @@ $documentation-layout-sticky-footer-height: 100px !default;
   @include respond-to("medium") {
 
     .header {
+      padding-left: $gutter-scale1;
     }
     .toc {
       @include span-columns(4 of 12);

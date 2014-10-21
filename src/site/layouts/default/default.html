@@ -2,16 +2,20 @@
 <html lang="en">
 <head>
     {% include head.html %}
+    {% include stylesheet_links/default.html %}
 </head>
 
 <body>
 
-<div class="pussshy__site-overlay"></div>
 
 <div class="default-layout">
     {{ content }}
 </div>
 
-{% include scripts.html %}
+{% include scripts/default.html %}
+<script>
+    // bootstrap SiteEngine
+    require('site').bootstrap();
+</script>
 </body>
 </html>

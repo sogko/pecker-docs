@@ -5,16 +5,14 @@
   "skipHash": true,
   "assets": [
     {
-      "name": "site.js",
-      "type": "file",
-      "files": [
-        "./src/pussshy/js/pussshy.js",
-        "./src/js/site.js"
-      ],
-      "watch": [
-        "./src/pussshy/js/pussshy.js",
-        "./src/js/site.js"
-      ]
+      "name": "fonts",
+      "type": "folder",
+      "folder": "./src/fonts"
+    },
+    {
+      "name": "images",
+      "type": "folder",
+      "folder": "./src/images"
     },
     {
       "name": "site.css",
@@ -32,11 +30,10 @@
           "args": {
             "includePaths": [
               "./src/",
+              "./src/components/",
               "./bower_components/neat/app/assets/stylesheets",
               "./bower_components/bourbon/dist/",
-              "./bower_components/normalize-scss",
-              "./bower_components/bem.scss",
-              "./bower_components/typeplate-starter-kit/scss/"
+              "./bower_components/normalize-scss"
             ]
           }
         },
@@ -44,36 +41,49 @@
       ]
     },
     {
-      "name": "fonts",
-      "type": "folder",
-      "folder": "./src/fonts"
-    },
-    {
-      "name": "images",
-      "type": "folder",
-      "folder": "./src/images"
-    },
-    {
-      "name": "jquery",
-      "type": "folder",
-      "folder": "./bower_components/jquery/dist",
-      "include": [],
-      "exclude": [],
-      "watch": []
-    },
-    {
-      "name": "jqueryPackage",
-      "type": "package",
-      "assetNames": [
-        "jquery/jquery.min.js"
+      "name": "common.js",
+      "type": "browserify",
+      "entries": [],
+      "require": [
+        {
+          "type": "bower",
+          "name": "jquery"
+        },
+        {
+          "type": "module",
+          "name": "contentloaded",
+          "expose": "contentloaded",
+          "location": "./src/components/pussshy/js/pussshy.js"
+        },
+        {
+          "type": "module",
+          "name": "Pussshy",
+          "expose": "Pussshy",
+          "location": "./src/components/pussshy/js/pussshy.js"
+        }
+      ],
+      "transform": [
+        "deamdify"
+      ],
+      "watch": [
+        "./src/components/pussshy/js/pussshy.js"
       ]
     },
     {
-      "name": "assets",
+      "name": "site.js",
+      "type": "browserify",
+      "entries": [],
+      "require": [],
+      "external": [
+        "common.js"
+      ]
+    },
+    {
+      "name": "sitePackage",
       "type": "package",
       "assetNames": [
-        "jqueryPackage",
         "site.css",
+        "common.js",
         "site.js"
       ]
     }
