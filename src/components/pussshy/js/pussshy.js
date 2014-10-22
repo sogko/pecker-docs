@@ -131,8 +131,18 @@ var Pussshy = (function () {
 
     if (!cssTransforms3d) {
       //jQuery fallback
-      this.$menu.css({left: '0px'}); //hide menu by default
-      this.$canvas.css({'overflow-x': 'hidden'}); //fixes IE scrollbar issue
+
+      if (this.direction === 'right') {
+        // default: left
+        this.$menu.css({right: '-' + this.menuWidth, opacity: 1}); //hide menu by default
+        this.$canvas.css({'overflow-x': 'hidden'}); //fixes IE scrollbar issue
+
+      } else {
+        // default: left
+        this.$menu.css({left: '-' + this.menuWidth, opacity: 1}); //hide menu by default
+        this.$canvas.css({'overflow-x': 'hidden'}); //fixes IE scrollbar issue
+      }
+
     }
   }
 
@@ -152,14 +162,25 @@ var Pussshy = (function () {
 
   function openPushyFallback() {
     this.$body.addClass(this.siteOverlayActiveClass);
-    this.$menu.animate({left: this.menuWidth }, this.menuSpeed);
-    this.$canvas.animate({left: this.menuWidth}, this.menuSpeed);
+    if (this.direction === 'right') {
+      this.$menu.animate({right: '0px' }, this.menuSpeed);
+      this.$canvas.animate({right: this.menuWidth}, this.menuSpeed);
+    } else {
+      this.$menu.animate({left: '0px' }, this.menuSpeed);
+      this.$canvas.animate({left: this.menuWidth}, this.menuSpeed);
+    }
+
   }
 
   function closePushyFallback() {
     this.$body.removeClass(this.siteOverlayActiveClass);
-    this.$menu.animate({left: '0px'}, this.menuSpeed);
-    this.$canvas.animate({left: '0px'}, this.menuSpeed);
+    if (this.direction === 'right') {
+      this.$menu.animate({right: '-' + this.menuWidth}, this.menuSpeed);
+      this.$canvas.animate({right: '0px'}, this.menuSpeed);
+    } else {
+      this.$menu.animate({left: '-' + this.menuWidth}, this.menuSpeed);
+      this.$canvas.animate({left: '0px'}, this.menuSpeed);
+    }
   }
 
   Pussshy.prototype.toggle = function toggle() {
