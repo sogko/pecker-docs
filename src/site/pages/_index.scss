@@ -1,0 +1,182 @@
+$index-header-height: 500px;
+$index-paragraph-width: 80%;
+$index-paragraph-width-medium-screen: 800px;
+$index-code-block-width: 80%;
+$index-code-block-width-medium-screen: 800px;
+
+.index__header {
+
+
+  margin-bottom: $gutter-scale2;
+  margin-top: $gutter-scale2;
+  text-align: center;
+  h1 {
+    @extend .giga;
+  }
+  .lead {
+    margin: $gutter-scale auto;
+  }
+
+  p {
+    margin: 0 auto $gutter-scale-2;
+    padding: 0 $gutter-scale;
+
+    width: $index-paragraph-width;
+    @include respond-to(medium) {
+      width: $index-paragraph-width-medium-screen;
+    }
+  }
+
+  .control-section {
+    margin-top: $gutter-scale2;
+  }
+}
+
+.index__quick-start {
+
+  text-align: center;
+
+  margin-top: $gutter-scale2;
+  margin-bottom: $gutter-scale2;
+
+  h4 {
+    margin: $gutter-scale auto;
+    width: $index-code-block-width;
+    @include respond-to(medium) {
+      width: $index-code-block-width-medium-screen;
+    }
+  }
+
+  .highlight {
+    text-align: left;
+    margin: $gutter-scale auto;
+
+    border: 1px solid $grayscale-color-tint-6;
+    border-radius: 10px;
+    background-color: $grayscale-color-tint-6;
+
+    width: $index-code-block-width;
+    @include respond-to(medium) {
+      width: $index-code-block-width-medium-screen;
+    }
+    pre {
+      margin: $gutter-scale $gutter-scale1;
+    }
+  }
+
+  .control-section {
+    margin-top: $gutter-scale2;
+  }
+}
+
+.index__take-control {
+  @include centered-container();
+
+  margin-top: $gutter-scale2;
+  margin-bottom: $gutter-scale2;
+
+}
+
+.next-section-button {
+  @include button--arrow-down();
+}
+
+.index__get-started-call-to-action {
+  text-align: center;
+  @extend .delta;
+
+  background-color: $grayscale-color-tint-6;
+
+  padding: $gutter-scale1;
+  margin: 0;
+
+  .get-started-button {
+    @include button-custom();
+    font-weight: normal;
+    transition: .25s;
+    padding-left: $gutter-scale;
+    padding-right: $gutter-scale;
+  }
+}
+
+
+@mixin grid-item-columns($columns) {
+  width: (100% / 12) * $columns;
+}
+@mixin grid-item-image($background) {
+  background: $background;
+  background-color: $grid-item-background;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+
+.grid-items {
+  $grid-items-background: inherit;
+  $grid-item-background: inherit;
+  $grid-item-border-size: 9px;
+  $grid-item-columns: 4;
+  $grid-item-big-columns: 8;
+  $grid-item-color: $secondary-color;
+  $grid-item-height: 17em;
+  $grid-item-image-size: 6em;
+
+  @include clearfix;
+
+  .grid-item {
+    @include transition (all 0.2s ease-in-out);
+    height: $grid-item-height;
+    background: $grid-item-background;
+    width: 100%;
+    overflow: hidden;
+    float: left;
+    padding: 2em;
+    border-top: 0;
+    border-bottom: $grid-item-border-size solid $grid-items-background;
+    border-left: $grid-item-border-size /2 solid $grid-items-background;
+    border-right: $grid-item-border-size /2 solid $grid-items-background;
+    text-align: center;
+
+    @include respond-to(medium) {
+      @include grid-item-columns($grid-item-columns);
+    }
+
+  }
+
+  .grid-item img {
+    display: block;
+    height: $grid-item-image-size;
+    width: $grid-item-image-size;
+    margin: auto;
+    margin-bottom: 1em;
+  }
+
+  .grid-item h1 {
+    @extend .zeta;
+    font-weight: bold;
+//    font-size: 1.3em;
+    margin-bottom: .4em;
+  }
+
+  .grid-item p {
+    font-size: 0.9em;
+    margin: auto;
+    color: transparentize($grid-item-color, .3);
+    @include respond-to(small) {
+      max-width: 90%;
+    }
+  }
+
+  .grid-item-big {
+    @include respond-to(medium) {
+      @include grid-item-columns($grid-item-big-columns);
+    }
+    p {
+      @include respond-to(small) {
+        max-width: 60%;
+      }
+    }
+  }
+
+
+}

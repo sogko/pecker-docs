@@ -1,0 +1,28 @@
+// SASS 3.2 version of template by jaydenseric
+// http://jaydenseric.com/blog/font-icons-like-a-boss-with-sass-and-font-custom
+
+// Declare icon font
+@include font-face('icons', './fonts/custom/icons');
+
+// List icons
+$icons-arrow-down: "\f100";
+$icons-home: "\f101";
+
+// Use to apply icons
+@mixin icon($position: before, $icon: false, $styles: true) {
+  @if $position == both {
+    $position: 'before, &:after';
+  }
+  &:#{$position} {
+    @if $icon {
+      content: "#{$icon}";
+    }
+    @if $styles {
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-family: 'icons';
+    }
+    @content;
+  }
+}

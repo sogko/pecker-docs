@@ -19,11 +19,12 @@ $gutter-scale4:  golden-ratio($gutter, 4); // 11.08901em
 // Site colour palette
 // --------------------------
 $luke-blue: #00b4ff;
+$everywhere-blue: #4294f0;
 $azalea-red: #c52d2f;
 $slate-gray: #393b44;
 $grayscale: #444444;
 
-$primary-color: $luke-blue;
+$primary-color: $everywhere-blue;
 $secondary-color: $slate-gray;
 $grayscale-color: $slate-gray;
 
@@ -54,7 +55,9 @@ $grayscale-color-tint-1: tint($grayscale-color, 5%);
 $grayscale-color-tint-2: tint($grayscale-color, 15%);
 $grayscale-color-tint-3: tint($grayscale-color, 45%);
 $grayscale-color-tint-4: tint($grayscale-color, 80%);
-$grayscale-color-tint-5: tint($grayscale-color, 98%);
+$grayscale-color-tint-5: tint($grayscale-color, 85%);
+$grayscale-color-tint-6: tint($grayscale-color, 95%);
+$grayscale-color-tint-7: tint($grayscale-color, 99%);
 $grayscale-color-shade-1: shade($grayscale-color, 1%);
 $grayscale-color-shade-2: shade($grayscale-color, 15%);
 $grayscale-color-shade-3: shade($grayscale-color, 35%);
@@ -78,6 +81,7 @@ $link-hover-color:    $primary-color-tint-4;
 $link-active-color:   $primary-color-shade-1;
 
 $horizontal-rule-color: $grayscale-color-tint-4;
+$brand-text-color:      $secondary-color-tint-5;
 
 
 //

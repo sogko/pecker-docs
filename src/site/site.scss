@@ -2,25 +2,22 @@
 @import "bourbon";
 @import "neat";
 
-@import "variables";
+@import "variables"; // import after neat
+
+@import "pussshy/stylesheets/pussshy";  // import pussshy after variables
+
 
 @import "mixins/respond-to";
 @import "mixins/sticky_footer";
 @import "mixins/centered-container";
-
-@import "pussshy/stylesheets/pussshy";  // import pussshy after variables
-
-@import "layouts/default/default";
-@import "layouts/demo/demo";
-@import "layouts/documentation/documentation";
-@import "layouts/page/page";
-
-@import "pages/blocks/blocks";
+@import "mixins/buttons";
 
 @import "typography/font_family";
-@import "typography/variables";
-@import "typeplate/typeplate-modified";   // import pussshy after typography/variables
-@import "typography/typography";          // import after typeplate
+@import "typography/syntax";
+@import "typography/icons";
+@import "typography/typeplate_variables";
+@import "typeplate/typeplate-modified";   // import typeplate after typography/variables
+@import "typography/typography";
 
 @import "blocks/brand/brand";
 @import "blocks/buttons/collapsible-menu-button/collapsible-menu-button";
@@ -30,3 +27,14 @@
 @import "blocks/headers/landing-header/landing-header";
 @import "blocks/nav/nav";
 @import "blocks/toc/toc";
+
+  // import after typeplate
+
+@import "layouts/default/default";
+@import "layouts/demo/demo";
+@import "layouts/documentation/documentation";
+@import "layouts/page/page";
+
+@import "pages/blocks/blocks";
+@import "pages/index";
+

@@ -5,56 +5,8 @@
 
 /*jshint -W079 */
 var $ = require('jquery');
-
-console.log('site.js');
-
-var Block = (function () {
-  var PATH_SEP = '/';
-  function Block($block) {
-    if (!$block instanceof $) {
-      $block = $($block);
-    }
-    this.$block = $block;
-    this.name = $block.data('block-name') || '';
-    this.type = $block.data('block-type') || '';
-  }
-
-  function executeRunnableBlock(ctx) {
-    var runnable;
-
-    // `require` strategy
-    // - try to load [namespace/]name/index first
-    // - if fails, try [namespace/]name/name
-    // - else, fails
-    try {
-      runnable = require([ctx.name, 'index'].join(PATH_SEP));
-    } catch (e) {
-      try {
-        var name =  ctx.name.split(PATH_SEP)[ctx.name.split(PATH_SEP).length - 1];
-        runnable = require([ctx.name, name].join(PATH_SEP));
-      } catch (e) {
-        console.error('Unable to load script for block "' + ctx.name + '"');
-      }
-    }
-    // `this` would point to `window` in browser environment, else undefined
-    // first arg would be $block context
-    runnable.call(window, ctx.$block);
-  }
-
-  Block.prototype.init = function () {
-
-    switch (this.type) {
-      case 'runnable':
-        // automatically execute export function with current block context
-        executeRunnableBlock.call(this, this);
-        break;
-      case 'component':
-        // do nothing. component will be required in a runnable block or another component
-        break;
-    }
-  };
-  return Block;
-})();
+var log = require('loglevel');
+var Block = require('common/block');
 
 function SiteEngine(options) {
 
@@ -64,6 +16,13 @@ function SiteEngine(options) {
   SiteEngine.prototype.__singletonInstance = this;
 
   this.options = options || {};
+
+  this.options.mode = 'development';
+  if (this.options.mode === 'development') {
+    log.setLevel('debug');
+    log.warn('Site in development mode');
+  }
+
 }
 
 SiteEngine.prototype.bootstrap = function () {
@@ -76,7 +35,8 @@ SiteEngine.prototype.bootstrap = function () {
   // initialize blocks when ready
   $(document).ready(function () {
 
-    console.log('ready!');
+    log.debug('ready! 33');
+
 
     // initialize all tagged blocks
     var blocks = $('*[data-block-name]');

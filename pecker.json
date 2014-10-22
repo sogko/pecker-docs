@@ -50,10 +50,8 @@
           "name": "jquery"
         },
         {
-          "type": "module",
-          "name": "contentloaded",
-          "expose": "contentloaded",
-          "location": "./src/components/pussshy/js/pussshy.js"
+          "type": "npm",
+          "name": "loglevel"
         },
         {
           "type": "module",

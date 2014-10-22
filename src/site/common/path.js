@@ -1,6 +1,8 @@
 'use strict';
 
+var log = require('loglevel');
+
 module.exports = function () {
-  console.log('path.js');
+  log.debug('path.js');
   return 'VALUE RETURNED FROM PATH';
 };

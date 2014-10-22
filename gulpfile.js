@@ -11,6 +11,7 @@ var rename = require('gulp-rename');
 var fs = require('fs-extra');
 var flatten = require('gulp-flatten');
 var Handlebars = require('handlebars');
+var beautifyHTML = require('js-beautify').html;
 
 // register package asset tag helper
 Handlebars.registerHelper('PeckerAsset', function (options) {
@@ -55,6 +56,7 @@ function createDynamicBlockScriptRequires(opts, done) {
       }
       siteEngineAssetOptions.require.push(require);
     }
+    console.log(siteEngineAssetOptions);
 
     if (done) {
       done(opts, siteEngineAssetOptions);
@@ -98,46 +100,53 @@ function parseIncludeTemplates() {
     }))
     .pipe(gulp.dest('./_includes'));
 }
-function copyBlocksIncludeHTML() {
-  gulp.src('./src/site/blocks/**/*.html')
-    .pipe(gulp.dest('./_includes'));
-}
-function copyLayoutHTML() {
-  gulp.src('./src/site/layouts/**/*.html')
-    .pipe(flatten())
-    .pipe(gulp.dest('./_layouts'));
-}
-function copyIncludeHTML() {
-  gulp.src(['./src/site/includes/*.html', '!./src/site/includes/_*.html'])
-    .pipe(gulp.dest('./_includes'));
-}
-function copyPagesHTML() {
-  gulp.src(['./src/site/pages/**/*.html'])
-    .pipe(gulp.dest('./'));
-}
-
 gulp.task('parseIncludeTemplates', ['build'], function () {
   parseIncludeTemplates();
 });
-
+// don't trigger full build
 gulp.task('parseIncludeTemplates:standalone', function () {
   parseIncludeTemplates();
 });
 
-gulp.task('copyIncludes', function () {
-  copyIncludeHTML();
-});
-
+function copyBlocksIncludeHTML(dest) {
+  gulp.src('./src/site/blocks/**/*.html')
+    .pipe(gulp.dest(dest || './_includes'));
+}
 gulp.task('copyBlocks', function () {
   copyBlocksIncludeHTML();
 });
 
+function copyLayoutHTML(dest) {
+  gulp.src('./src/site/layouts/**/*.html')
+    .pipe(flatten())
+    .pipe(gulp.dest(dest || './_layouts'));
+}
 gulp.task('copyLayouts', function () {
   copyLayoutHTML();
 });
 
+function copyIncludeHTML(dest) {
+  gulp.src(['./src/site/includes/*.html', '!./src/site/includes/_*.html'])
+    .pipe(gulp.dest(dest || './_includes'));
+}
+gulp.task('copyIncludes', function () {
+  copyIncludeHTML();
+});
+
+function copyPagesHTML(dest) {
+  gulp.src(['./src/site/pages/**/*.html'])
+    .pipe(gulp.dest(dest || './'));
+}
 gulp.task('copyPages', function () {
   copyPagesHTML();
+});
+
+function copyDistFiles(dest) {
+  gulp.src(['./src/dist/**/*'])
+    .pipe(gulp.dest(dest || './_site/dist'));
+}
+gulp.task('copyDist', function () {
+  copyDistFiles();
 });
 
 gulp.task('watch', function () {
@@ -148,26 +157,23 @@ gulp.task('watch', function () {
       console.log('changed');
     },
     complete: function () {
-      console.log('complete');
-      gulp.start('parseIncludeTemplates:standalone');
-      gulp.start('copyIncludes');
-      gulp.start('copyBlocks');
-      gulp.start('copyLayouts');
-      gulp.start('copyPages');
       gulp.start('jekyll:build:standalone');
     }
   });
 
-  gulp.watch('./src/site/blocks/**/*.html', ['copyBlocks']);
-  gulp.watch('./src/site/layouts/**/*.html', ['copyLayouts']);
+  gulp.watch('./src/site/blocks/**/*.html', ['jekyll:build:standalone']);
+  gulp.watch('./src/site/layouts/**/*.html', ['jekyll:build:standalone']);
+  gulp.watch('./src/site/pages/**/*.html', ['jekyll:build:standalone']);
+
+  // implement watch instructions separately
   gulp.watch('./src/site/**/*.js', function () {
 
     var opts = jf.readFileSync('./pecker.json');
-
     createDynamicBlockScriptRequires(opts, function (newOpts, siteEngineAssetOptions) {
       var builder = new Pecker.Builder(newOpts);
       builder.buildBrowserifyAsset(siteEngineAssetOptions, function () {
         console.log('built siteEngine');
+        gulp.start('jekyll:build:standalone');
       });
     });
   });
@@ -192,13 +198,23 @@ gulp.task('clean', function () {
   });
 });
 
-gulp.task('jekyll:build', ['parseIncludeTemplates', 'copyIncludes', 'copyBlocks', 'copyLayouts'], function () {
+gulp.task('jekyll:build', ['parseIncludeTemplates', 'copyIncludes', 'copyBlocks', 'copyLayouts', 'copyPages'], function () {
   childProcess.spawn('jekyll', ['build'], {stdio: 'inherit'});
 });
 
-gulp.task('jekyll:build:standalone', ['parseIncludeTemplates:standalone', 'copyIncludes', 'copyBlocks', 'copyLayouts'], function () {
+gulp.task('jekyll:build:standalone', ['parseIncludeTemplates:standalone', 'copyIncludes', 'copyBlocks', 'copyLayouts', 'copyPages', 'copyDist'], function () {
   childProcess.spawn('jekyll', ['build'], {stdio: 'inherit'});
 });
 
+gulp.task('beautifyHTML', function () {
+  gulp.src(['./_site/**/*.html'])
+    .pipe(map(function (content) {
+      return beautifyHTML(content.toString(), {
+        indent_size: 2,
+        preserve_newlines: false
+      });
+    }))
+    .pipe(gulp.dest('./_site'));
+});
 
-gulp.task('default', ['clean', 'build', 'parseIncludeTemplates', 'copyIncludes', 'copyBlocks', 'copyLayouts', 'copyPages', 'jekyll:build']);
+gulp.task('default', ['clean', 'build', 'jekyll:build']);

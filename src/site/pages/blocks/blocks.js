@@ -1,10 +1,11 @@
 'use strict';
 
+var log = require('loglevel');
 var utils = require('common/utils');
 
 module.exports = function () {
-  console.log('block.js');
-  console.log('block.js utils()', utils());
+  log.debug('block.js');
+  log.debug('block.js utils()', utils());
   return 'VALUE RETURNED FROM blockblockblock';
 
 };

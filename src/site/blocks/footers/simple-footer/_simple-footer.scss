@@ -5,7 +5,7 @@
   text-align: center;
   background-color: $grayscale-color-tint-5;
   @include respond-to('medium') {
-    margin-top: $gutter-scale2;
-    padding-top: $gutter-scale3;
+//    margin-top: $gutter-scale2;
+//    padding-top: $gutter-scale3;
   }
 }

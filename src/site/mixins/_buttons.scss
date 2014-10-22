@@ -1,0 +1,38 @@
+@mixin button-custom() {
+
+  @include button(flat, $primary-color);
+}
+
+@mixin button--arrow-down() {
+  @include icon(before, $icons-arrow-down) {
+  }
+
+  &,
+  &:link,
+  &:visited {
+    color: $brand-text-color;
+
+    background: $grayscale-color-tint-6;
+  }
+  &:hover {
+    color: $grayscale-color-tint-7;
+    background: $primary-color;
+  }
+  &:active {
+    color: $brand-text-color;
+    background: $secondary-color-tint-3;
+  }
+
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  margin: 0;
+  padding: 0;
+
+  border-radius: 50%;
+  font-size: 1.1em;
+  font-weight: bolder;
+  transition: 0.25s;
+
+}

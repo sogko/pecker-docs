@@ -1,6 +1,8 @@
 'use strict';
 
+var log = require('loglevel');
+
 module.exports = function () {
-  console.log('utils.js');
+  log.debug('utils.js');
   return 'VALUE RETURNED FROM UTILSSSS';
 };

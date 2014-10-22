@@ -1,9 +1,10 @@
 'use strict';
 
+var log = require('loglevel');
 var Pussshy = require('Pussshy');
 
 module.exports = function ($ctx) {
-  console.log('documentation.js');
+  log.debug('documentation.js');
 
   // instantiate off-canvas menu
   $ctx.pussshy = new Pussshy({

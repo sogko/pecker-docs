@@ -10,7 +10,6 @@ $page-layout-sticky-footer-height: 100px !default;
     @include centered-container();
   }
   .content {
-    @include centered-container();
   }
   .footer {
   }

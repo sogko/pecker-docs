@@ -34,8 +34,7 @@
     "afterEach",
     "it",
     "inject",
-    "toString",
-    "$"
+    "toString"
   ],
   "white": true,
   "devel": false,

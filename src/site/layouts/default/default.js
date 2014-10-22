@@ -1,6 +1,8 @@
 'use strict';
 
+var log = require('loglevel');
+
 module.exports = function ($ctx) {
-  console.log('default.js');
+  log.debug('default.js');
 };
 

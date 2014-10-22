@@ -24,9 +24,11 @@
     "gulp-liquid": "^0.1.0",
     "gulp-rename": "^1.2.0",
     "handlebars": "^2.0.0",
+    "js-beautify": "^1.5.4",
     "jsonfile": "^2.0.0",
     "liquid-node": "^2.1.2",
     "lodash": "^2.4.1",
+    "loglevel": "^1.1.0",
     "pecker": "0.0.0",
     "vinyl-map": "^1.0.1"
   },

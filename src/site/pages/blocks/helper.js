@@ -1,6 +1,8 @@
 'use strict';
 
+var log = require('loglevel');
+
 module.exports = function () {
-  console.log('helper.js');
+  log.debug('helper.js');
   return 'VALUE RETURNED FROM HELPER';
 };
