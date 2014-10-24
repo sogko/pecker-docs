@@ -11,10 +11,17 @@ $index-code-block-width-medium-screen: 800px;
   margin-top: $gutter-scale2;
   text-align: center;
   h1 {
-    @extend .giga;
+    @extend .mega;
   }
   .lead {
     margin: $gutter-scale auto;
+    @extend .zeta;
+
+    @include respond-to(medium) {
+      // @extend .delta doesn't work
+      font-size: 24px;
+      font-size: 1.33333rem;
+    }
   }
 
   p {
@@ -83,7 +90,7 @@ $index-code-block-width-medium-screen: 800px;
 
 .index__get-started-call-to-action {
   text-align: center;
-  @extend .delta;
+  @extend .epsilon;
 
   background-color: $grayscale-color-tint-6;
 
