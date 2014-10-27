@@ -2,10 +2,13 @@
 layout: documentation
 
 title: "Why would I need a framework?"
-order: 5
+order: 4
 date: 2014-10-08 23:24:43
 ---
 
+This section outlines use-cases for why you would need a framework to manage your assets.
+
+----
 
 #### Wrangle a variety of assets with complex dependencies easily
 
@@ -18,15 +21,19 @@ A web project typically may start with something as simple as the following set 
 At this stage of development, it may seems trivial managing your assets.
 But as your project gets bigger and complex, you might find yourself trying to juggle a huge number of assets.
 
-Things might start to feel that its getting out of hand but with a little elbow grease, you probably might be able to devise the most ingenious folder structure.
+Things might start to feel that its getting out of hand but with a little elbow grease, you probably might be able to 
+devise the most ingenious folder structure to keep those files in line.
 
 But how about when those assets start to have complex dependencies among itselves? 
 
 Here's a typical scenario for a medium-sized project:
 
 
-> Your client-side JavaScript application file requires a **custom vendor** code, that depends on multiple **Bower**-managed component, along with several **external scripts** hosted on different **CDN networks**. Let's not get started on **stylesheets and images** that needed to be included.
-> Oh, have we mentioned that the **dependency order** mattered too. Also, let's not forget about having to need to refer to the URL path to your **HTML templates**  within your application on the client-side.
+> Your client-side JavaScript application file requires a **custom vendor** code, that depends on multiple **Bower**-managed components, along with several **external scripts** hosted on different **CDN networks**.
+
+> Let's not get started on **stylesheets and images** that needed to be included.
+
+> Oh, have we mentioned that the **dependency order** mattered too. Also, don't forget about having to need to refer to the URL path to your **HTML templates**  within your application on the client-side.
 
 Phew.
 
@@ -41,7 +48,7 @@ Because it happened before.
 
 
 #### Pre- and post-processing transformation to assets
-There's a high chance that you are already dealing with an automated build workflow for your project using Grunt, Gulp or [insert latest and kewlest build tool here]. 
+There's a high chance that you are already dealing with an automated build workflow for your project using Grunt, Gulp or *[insert latest and kewlest build tool here]*. 
 
 A typical web development scenario would involve the following:
 
@@ -54,7 +61,8 @@ A typical web development scenario would involve the following:
 
 In short, there is no shortage of use-cases for processing your assets before serving them up in your web applications.
 
-**Pecker framework provides various mechanisms to handle pre- and post-processing for different types of assets to fit your project.**
+**Pecker framework provides various mechanisms to handle pre- and post-processing for different types of assets to fit your project,
+along with built-in transformations for typical use-cases**
 
 
 ---
@@ -84,5 +92,10 @@ The issue here is that depending on where you are and what you need, you might b
 
 * the **file path** to the asset on the server's file system, for eg: ```/opt/apps/server/static/templates/view.hbs```
 * the **URL path** of the asset relative to the base root URL, for eg: ```/assets/templates/view.hbs```
+
+This is where is might get sticky trying to manage this meta-information about your assets.
+
+Pecker helps by keeping track on your assets and providing you mechanisms to retrieve information *(such as the URL path and physical file path)* about your assets from
+both the front-end and back-end of your application.
 
 **Pecker framework bridges the gap between server and client-side code by making available full-featured APIs for both side that you can use to work with your assets, not against it.**

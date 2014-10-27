@@ -1,14 +1,16 @@
 ---
 layout: documentation
-title: "Gulp Task"
-order: 5
+title: "Client-side"
+order: 6
+draft: true
 ---
 
-#### Using Pecker as a Gulp task
+#### Using Pecker as a client-side script in browser
 Using Pecker in your Gulp build workflow is as simple as using the Pecker module directly in your ```gulpfile.js``` and defining a gulp task.
 
 {% highlight javascript %}
 // gulpfile.js
+
 var gulp = require('gulp');
 var Pecker = require('pecker');
 

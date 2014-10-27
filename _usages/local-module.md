@@ -1,14 +1,14 @@
 ---
 layout: documentation
 title: "Local Module"
-order: 3
+order: 4
 ---
 
-### Using Pecker as a local module
+#### Using Pecker as a client-side script in your browser
 
 This is useful if you want to **create your own custom build workflow**.
 
-You can also **integrate Pecker into your existing build** *(in your Gruntfile.js or Gulpfile.js, for example)*.
+You can also **integrate Pecker into your existing build** *(in your ```Gruntfile.js``` or ```gulpfile.js```, for example)*.
 
 ---
 
@@ -21,13 +21,13 @@ var Pecker = require('pecker');
 
 // define Pecker.Builder options
 var opts = { /*...*/ };
-// or require an external .js or .json file containing configured options
+// or require a .js or json file containing configured options
 // for eg: var opts = require('./pecker.json');
 
 // create Pecker.Builder instance
 var builder = new Pecker.Builder(opts);
 
-// run build
+// build assets defined in `opts`
 builder.buildAssets(function () {
 	console.log('Build completed');
 );

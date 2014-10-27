@@ -15,7 +15,10 @@
         <li>
             <p>{{ collection.title }}</p>
             <ul>
-                {% for doc in sorted_docs %}<li class="{% if page.url and page.url == doc.url %}active{% endif %}"><a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.title }}</a></li>
+                {% for doc in sorted_docs %}
+                {% if site.showDrafts == true or doc.draft != true %}
+                <li class="{% if page.url and page.url == doc.url %}active{% endif %}"><a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.title }}</a></li>
+                {% endif %}
                 {% endfor %}
             </ul>
         </li>

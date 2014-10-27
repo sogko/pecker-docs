@@ -206,8 +206,8 @@ gulp.task('jekyll:build:standalone', ['parseIncludeTemplates:standalone', 'copyI
   childProcess.spawn('jekyll', ['build'], {stdio: 'inherit'});
 });
 
-gulp.task('beautifyHTML', function () {
-  gulp.src(['./_site/**/*.html'])
+function beautify() {
+  return gulp.src(['./_site/**/*.html'])
     .pipe(map(function (content) {
       return beautifyHTML(content.toString(), {
         indent_size: 2,
@@ -215,6 +215,14 @@ gulp.task('beautifyHTML', function () {
       });
     }))
     .pipe(gulp.dest('./_site'));
+}
+gulp.task('beautifyHTML:full', ['jekyll:build'], function () {
+  return beautify();
+});
+
+gulp.task('beautifyHTML', function () {
+  return beautify();
 });
 
 gulp.task('default', ['clean', 'build', 'jekyll:build']);
+gulp.task('publish', ['clean', 'build', 'jekyll:build', 'beautifyHTML:full']);

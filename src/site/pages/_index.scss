@@ -58,16 +58,9 @@ $index-code-block-width-medium-screen: 800px;
     text-align: left;
     margin: $gutter-scale auto;
 
-    border: 1px solid $grayscale-color-tint-6;
-    border-radius: 10px;
-    background-color: $grayscale-color-tint-6;
-
     width: $index-code-block-width;
     @include respond-to(medium) {
       width: $index-code-block-width-medium-screen;
-    }
-    pre {
-      margin: $gutter-scale $gutter-scale1;
     }
   }
 

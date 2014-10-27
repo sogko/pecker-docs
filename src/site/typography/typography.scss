@@ -64,3 +64,16 @@ a {
     color: $link-active-color;
   }
 }
+
+// Styles: Syntax highlight override
+// -------------------------------------//
+.highlight {
+  border: 1px solid $grayscale-color-tint-6;
+  border-radius: 10px;
+  background-color: $grayscale-color-tint-6;
+
+  pre {
+    margin: $gutter-scale $gutter-scale1;
+  }
+
+}
