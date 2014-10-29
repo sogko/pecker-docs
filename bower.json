@@ -21,6 +21,7 @@
     "compass-mixins": "~1.0.2",
     "bourbon": "~3.2.3",
     "neat": "~1.5.0",
-    "normalize-scss": "~3.0.1"
+    "normalize-scss": "~3.0.1",
+    "jquery": "1.11.1"
   }
 }
