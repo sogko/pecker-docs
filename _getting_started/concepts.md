@@ -6,8 +6,6 @@ order: 2
 date: 2014-10-08 23:24:43
 ---
 
-This section outlines some relevant concepts pertaining to what Pecker is trying to achieve.
-
 ----
 
 #### What is an asset?

@@ -8,19 +8,19 @@ date: 2014-10-08 23:24:43
 
 ----
 
-### Pecker is not a build tool
+#### Pecker is not a build tool
 Well, for one thing, Pecker is **not** a build tool.
 
 Pecker is not looking to do what Grunt, Gulp or Broccoli head out to do.
 
 These build tools do their job and they do it well.
 
-### It is a framework
+#### It is a framework
 Pecker is a **framework that aims to make your assets management easier**, using multitude of tools behind the scene to achieve that.
 
 In fact, currently Pecker is using Gulp as a build tool as part of the framework. It was selected because right now, it seems to fit most of the use-cases we needed.
 
-### Why a framework?
+#### Why a framework?
 The beauty of this is that **we help to figure out the best tools and practices that you might need**,
 specifically in assets management, free-ing you with making other choices related to other parts of your application development.
 

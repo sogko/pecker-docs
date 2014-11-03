@@ -6,8 +6,6 @@ order: 4
 date: 2014-10-08 23:24:43
 ---
 
-This section outlines use-cases for why you would need a framework to manage your assets.
-
 ----
 
 #### Wrangle a variety of assets with complex dependencies easily

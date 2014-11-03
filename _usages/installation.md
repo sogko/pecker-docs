@@ -5,6 +5,8 @@ order: 2
 date: 2014-10-08 23:24:43
 ---
 
+----
+
 You can choose to install Pecker through one of the following ways (or both, if you want):
  
 * as a command-line interpreter (CLI) program, allowing you to run Pecker from any directory

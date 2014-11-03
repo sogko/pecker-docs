@@ -4,6 +4,8 @@ title: "Gulp Task"
 order: 5
 ---
 
+----
+
 #### Using Pecker as a Gulp task
 Using Pecker in your Gulp build workflow is as simple as using the Pecker module directly in your ```gulpfile.js``` and defining a gulp task.
 

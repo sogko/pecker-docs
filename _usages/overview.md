@@ -5,6 +5,8 @@ title: "Overview"
 order: 1
 ---
 
+----
+
 #### Installation
 
 You can choose to install Pecker through one of the following ways (or both, if you want):

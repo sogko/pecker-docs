@@ -4,15 +4,14 @@ title: "Local Module"
 order: 4
 ---
 
-#### Using Pecker as a client-side script in your browser
+----
+
+#### Using Pecker as a local NodeJS module
 
 This is useful if you want to **create your own custom build workflow**.
 
 You can also **integrate Pecker into your existing build** *(in your ```Gruntfile.js``` or ```gulpfile.js```, for example)*.
 
----
-
-Simply install Pecker module and require it in your code.
 
 Here's an example on how to use ```Pecker.Builder``` directly
 
