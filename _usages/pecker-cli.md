@@ -41,7 +41,6 @@ Interactively create a `pecker.json`.
 Watch all assets defined in `pecker.json` and build on changes.
 
 
-
 ### Options
 
 ###### -c, --config

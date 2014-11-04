@@ -1,16 +1,14 @@
 ---
 layout: documentation
-title: "Configurations"
+title: "General configuration"
 order: 1
 ---
 
 ----
-### General configurations
 
 ##### name
 Name to identify your project.
 
-* Required: `false`
 * Default: `null`
 * Possible values: Any valid `string`
 
@@ -50,7 +48,7 @@ For example, if `baseUrl` is `/static`, an asset with a name of `site.css` will 
 * Possible values: Any valid URL.
 
 ##### assets
-An array of asset definitions and its options.
+An array of asset configurations.
 
 * Required: `false`
 * Default: `[]`
@@ -86,6 +84,3 @@ Suppress all logs if build was run from terminal through Pecker CLI.
 * Required: `false`
 * Default: `false`
 * Possible values: `boolean`
-
-
-### Asset configurations

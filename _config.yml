@@ -35,6 +35,10 @@ collections:
     title: 'Tutorial'
     output: true
     permalink: /tutorial/:path/
+  configurations:
+    title: 'Configurations'
+    output: true
+    permalink: /configurations/:path/
   reference:
     title: 'Reference'
     output: true
