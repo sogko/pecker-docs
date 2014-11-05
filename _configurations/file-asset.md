@@ -44,12 +44,13 @@ A boolean flag to tell Pecker.Builder whether to generate unique content hash fo
 ----
 
 
-#### Example
+#### Example `file` asset configuration
 Transform all `*.scss` SASS files from a folder and produce a single `site.css` file asset
 {% highlight json %}
 {
   "name": "my-project",
-  "baseUrl": "/path/to/your/project",
+  "baseDir": "/path/to/your/project",
+  "baseUrl": "/assets",
   "destDir": "./dist",
   "assets": [
     {
@@ -68,5 +69,8 @@ Transform all `*.scss` SASS files from a folder and produce a single `site.css` 
 
 * **name**: `site.css` is the asset name and also will be the filename of the generated output file.
 * **files**: Get all `*.scss` files from `src` folder recursively.
-* **transform**: Apply `sass` transform to produce `css` output, followed by `clean-css` transform to produce minified `css` output. At the end of the transform stream, the output will be automatically be concatenated to a single file with the filename `site.css`.
-* **watch**: Tell Pecker.Builer to watch all `*.scss` files in `src` folder recursively.
+* **transform**: Apply the following transformation in order:
+  1. Apply `sass` transform to produce `css` output.
+  2. Followed by `clean-css` transform to produce minified `css` output.
+  3. At the end of the transform stream, the output will be automatically be concatenated to a single file with the filename `site.css`.
+* **watch**: Tell Pecker.Builder to watch all `*.scss` files in `src` folder recursively.

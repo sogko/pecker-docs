@@ -18,8 +18,9 @@ Here's how you would pass in your Pecker options if you are using the **Pecker C
 1. Open your terminal.
 2. Run `pecker init` in your project folder
 {% highlight bash %}
-$ cd /path/to/your/project.
-$ pecker init
+$ cd /path/to/your/project
+$ pecker init # interactively create `pecker.json`
+$ pecker build # build assets
 {% endhighlight %}
 
 Alternatively, you can manually create a `pecker.json` file in your project folder
@@ -64,4 +65,4 @@ builder.buildAssets(function () {
 {% endhighlight %}
 
 
-See Configurations to see available options
+See [Configurations]({{site.url}}{{site.baseurl}}/configurations/general) to see available options

@@ -54,6 +54,7 @@ An array of asset configurations.
 * Default: `[]`
 * Possible values: An array of asset config options.
 
+See [Asset Configurations]({{site.url}}{{site.baseurl}}/configurations/basic-asset) to see available options
 
 ##### skip
 A list of names of assets that the builder should skip.
@@ -84,3 +85,20 @@ Suppress all logs if build was run from terminal through Pecker CLI.
 * Required: `false`
 * Default: `false`
 * Possible values: `boolean`
+
+#### Example
+{% highlight json %}
+{
+  "name": "my-project",
+  "baseDir": "/path/to/your/project",
+  "baseUrl": "/assets",
+  "destDir": "./dist",
+  ...
+  "assets": [
+    { "type": "file", "name": "site.css", ... },
+    { "type": "folder", "name": "vendor", ... },
+    { "type": "browserify", "name": "site.js", ... },
+    ...
+  ]
+}
+{% endhighlight %}

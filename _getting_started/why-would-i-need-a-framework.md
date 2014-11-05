@@ -54,7 +54,7 @@ A typical web development scenario would involve the following:
 * Auto-prefix vendor-specific prefixes to CSS rules.
 * Optimize your CSS stylesheet for improved performance through minification.
 * Optimize your JavaScript files for improved performances through minification and name-mangling.
-* Bundling your Javascript files for use in browsers using Browserify
+* Bundling your Javascript files for use in browsers using Browserify.
 * And much more!
 
 In short, there is no shortage of use-cases for processing your assets before serving them up in your web applications.
@@ -62,9 +62,7 @@ In short, there is no shortage of use-cases for processing your assets before se
 **Pecker framework provides various mechanisms to handle pre- and post-processing for different types of assets to fit your project,
 along with built-in transformations for typical use-cases**
 
-
 ---
-
 
 #### Overcoming hurdles with browser-caching and versioning issues
 Have you been in a similar situation where you make modifications to, for example a CSS stylesheet, for a web application you're developing, but no matter how many times you refresh the browser, the changes refuse to show up? 
@@ -77,7 +75,6 @@ Try googling [cache busting](https://www.google.com.sg/#q=cache+busting), and it
 
 **Pecker framework has built-in mechanisms for cache-busting with added advantage of versioning 
 your assets as well.**
-
 
 
 ---

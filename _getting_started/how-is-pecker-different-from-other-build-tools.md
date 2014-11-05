@@ -26,7 +26,5 @@ specifically in assets management, free-ing you with making other choices relate
 
 We also try to ensure that Pecker would play nice with other web technologies. At the end of the day, we want to help you achieve productivity, not hinder it.
 
-This means that you can use Pecker alongside/integrated into your own build pipeline, letting **Pecker handle assets management** and letting your build tool preparing your application. 
-
-*(Heck, if Broccoli turns out to be a better build tool, Pecker might use it to some capacity.)*
+This means that you can use Pecker alongside/integrated into your own build pipeline, letting **Pecker handle assets management** and letting your build tool do what they do best for your application.
 

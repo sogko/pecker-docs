@@ -70,13 +70,14 @@ A boolean flag to tell Pecker.Builder whether to generate unique content hash fo
 
 ----
 
-#### Example
+#### Example `folder` asset configuration
 Define a folder asset for `bootstrap` vendor source files, including only the `.js` and `.css` files.
 
 {% highlight json %}
 {
   "name": "my-project",
-  "baseUrl": "/path/to/your/project",
+  "baseDir": "/path/to/your/project",
+  "baseUrl": "/assets",
   "destDir": "./dist",
   "assets": [
     {
