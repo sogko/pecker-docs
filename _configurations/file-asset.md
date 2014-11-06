@@ -13,8 +13,8 @@ An array of file paths or glob patterns that will be pushed into the transform s
 Both the paths and patterns can be absolute paths or relative to the defined [baseDir]({{site.url}}{{site.baseurl}}/configurations/general/#basedir) value.
 
 * Required: `true`
-* Possible values: An array of file paths or glob patterns `strings`.
-* Examples: `"./src/script.js"`, `"./src/**/*.js"`.
+* Possible values: A `string` or an array of `strings` of file paths or glob patterns.
+* Examples: `"./src/script.js"`, `["./src/**/*.js"]`.
 
 ##### transform
 An array of transform values.

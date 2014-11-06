@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "Package asset"
-order: 6
+order: 7
 subLevel: 1
 ---
 
@@ -9,8 +9,6 @@ subLevel: 1
 
 ##### assetNames
 An array of asset names to be added to a package asset.
-
-The assets must be define in the current Pecker configuration.
 
 * Required: `true`
 * Default: `[]`
@@ -29,7 +27,7 @@ The assets must be define in the current Pecker configuration.
 
 
 #### Example `package` asset configuration
-Transform all `*.scss` SASS files from a folder and produce a single `site.css` file asset
+
 {% highlight json %}
 {
   "name": "my-project",
@@ -90,6 +88,6 @@ The above example will result in two (2) packages:
 
 Notes
 
-* `sitePackage` contains another `package` asset (commonPackage).
+* `sitePackage` contains another `package` asset `commonPackage`.
 * `sitePackage` contains `vendor/bootstrap/bootstrap.min.js` <br/>(a file in a `folder` asset which is already an asset in `commonPackage`)
 * The order of the assets in a package is preserved, making managing asset dependencies maintainable.
