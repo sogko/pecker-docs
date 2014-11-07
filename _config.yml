@@ -35,6 +35,10 @@ collections:
     title: 'Tutorial'
     output: true
     permalink: /tutorial/:path/
+  asset-types:
+    title: 'Asset Types'
+    output: true
+    permalink: /asset-types/:path/
   configurations:
     title: 'Configurations'
     output: true
