@@ -17,7 +17,11 @@
             <ul>
                 {% for doc in sorted_docs %}
                 {% if site.showDrafts == true or doc.draft != true %}
+                {% if doc.subLevel == 1 %}
+                <li class="{% if page.url and page.url == doc.url %}active{% endif %}"><a href="{{ site.baseurl }}{{ doc.url }}"> &mdash; {{ doc.title }}</a></li>
+                {% else %}
                 <li class="{% if page.url and page.url == doc.url %}active{% endif %}"><a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.title }}</a></li>
+                {% endif %}
                 {% endif %}
                 {% endfor %}
             </ul>
