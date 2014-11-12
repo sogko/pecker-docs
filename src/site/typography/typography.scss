@@ -67,13 +67,47 @@ a {
 
 // Styles: Syntax highlight override
 // -------------------------------------//
+
+code, kbd, pre, samp {
+  line-height: 1.4em;
+}
+code {
+  border: 1px solid $grayscale-color-tint-5;
+  border-radius: 2px;
+  background-color: $grayscale-color-tint-6;
+  padding: 0.2em 0.5em;
+  margin: 0.2em 0.2em;
+  line-height: 0.8em;
+  @include word-wrap(normal);
+  hyphens: none;
+}
 .highlight {
   border: 1px solid $grayscale-color-tint-6;
   border-radius: 10px;
   background-color: $grayscale-color-tint-6;
+  margin: auto auto 1.5em;
+  padding: 0;
 
   pre {
     margin: $gutter-scale $gutter-scale1;
   }
+  code {
+    border: none;
+    background-color: inherit;
+    padding: 0;
+    margin: 0;
+  }
+}
 
+ul {
+  margin: auto auto 1.5em;
+}
+
+// Styles: Description list
+// -------------------------------------//
+
+.config-list {
+  dt {
+    font-weight: bold;
+  }
 }
