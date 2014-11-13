@@ -20,7 +20,7 @@ Typical examples of a `file` asset:
 Basically, any single file that you want to serve from your server, is a `file` asset.
 
 
-For `file` asset configuration options, see [Configurations]({{site.url}}{{site.baseurl}}/configurations/file-asset).
+For `file` asset configuration options, see [Configurations > File asset]({{site.url}}{{site.baseurl}}/configurations/file-asset).
 
 
 ----

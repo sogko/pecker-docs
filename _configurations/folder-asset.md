@@ -16,12 +16,6 @@ The path can be an absolute path or relative to the defined [baseDir]({{site.url
 * Possible values: A `string`.
 * Example: `"./src/vendor/"`
 
-##### transform
-An array of transform values.
-
-* Required: `false`
-* Default: `[]`
-* Possible values: Built-in transforms names or transform object.
 
 ##### include
 An array of glob patterns partials of files to include in this folder asset.
